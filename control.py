@@ -4,6 +4,8 @@ import pygame
 from time import sleep
 print("initiating window...")
 pygame.init()
+maintimer = pygame.clock.Clock()
+maintimer.tick(24)
 screen = pygame.display.set_mode((100,100))
 quit = False
 pi = pigpio.pi()
