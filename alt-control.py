@@ -1,5 +1,5 @@
 import pigpio, time # learn more: https://python.org/pypi/pigpio
-from pygame as pg
+import pygame as pg
 pg.init()
 maintimer = pg.clock.Clock()
 maintimer.tick(24)
