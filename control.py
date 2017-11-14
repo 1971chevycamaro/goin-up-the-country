@@ -3,6 +3,7 @@ from pygame import *
 display.init()
 scr = display.set_mode((720,480))
 run = True
+var = 0, 0
 while run:
     for e in event.get():
         if e.type == KEYDOWN:
