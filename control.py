@@ -1,9 +1,10 @@
 import pigpio
 from pygame import *
+pi = pigpio.pi()
 display.init()
 scr = display.set_mode((720,480))
 run = True
-var = 0, 0
+var = 18, 1500
 while run:
     for e in event.get():
         if e.type == KEYDOWN:
@@ -23,6 +24,6 @@ while run:
                 var = 17, 1500
             if e.key in [K_w, K_s]:
                 var = 18, 1500
-        pigpio.pi.set_servo_pulsewidth(var)
+        pi.set_servo_pulsewidth(var[0], var[1])
     time.wait(1)
 pigpio.stop()
