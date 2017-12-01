@@ -1,2 +1,2 @@
 sudo pigpiod
-python control.py
+python ./control.py
