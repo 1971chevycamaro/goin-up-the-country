@@ -13,3 +13,5 @@ def setThrottle(speed):
   else:
     if reportErrors:
       print("speed is invalid or incorrect type %s" % type(speed))
+def getThrottle():
+  return pigpio.get_servo_pulsewidth(18)
