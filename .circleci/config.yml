@@ -30,7 +30,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            pass
+            echo pwd
 
       - save_cache:
           paths:
