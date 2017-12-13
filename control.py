@@ -1,29 +1,29 @@
-import pigpio
-from pygame import *
-pi = pigpio.pi()
-display.init()
-scr = display.set_mode((720,480))
+import pygame
+from car import steering, esc
+
+pygame.display.init()
+scr = pygame.display.set_mode((720,480))
 run = True
-var = 18, 1500
 while run:
-    for e in event.get():
-        if e.type == KEYDOWN:
-            if e.key == K_a:
-                var = 17, 1800
-            elif e.key == K_d:
-                var = 17, 1200
-            elif e.key == K_w:
-                var = 18, 1600
-            elif e.key == K_s:
-                var = 18, 1400
-            elif e.key == K_ESCAPE:
-                var = 17, 0
-                run = False        
-        if e.type == KEYUP:
-            if e.key in [K_a, K_d]:
-                var = 17, 1500
-            if e.key in [K_w, K_s]:
-                var = 18, 1500
-        pi.set_servo_pulsewidth(var[0], var[1])
-    time.wait(1)
-pigpio.stop()
+  for e in pygame.event.get():
+     if e.type == pygame.KEYDOWN:
+        if e.key == pygame.K_a:
+          steering.setSteering(steering.getSteering() + 200)
+        elif e.key == pygame.K_d:
+          steering.setSteering(steering.getSteering() - 200)
+        elif e.key == pygame.K_w:
+          esc.setThrottle(esc.getThrottle() + 10)
+        elif e.key == pygame.K_s:
+          esc.setThrottle(esc.getThrottle() - 10)
+        elif e.key == pygame.K_LSHIFT:
+          esc.setThrottle(esc.getThrottle("base") * 2, "base")
+        elif e.key == pygame.K_ESCAPE:
+          run = False
+        if e.type == pygame.KEYUP:
+            if e.key in [pygame.K_a, pygame.K_d]:
+                steering.setSteering("center")
+            if e.key in [pygame.K_w, pygame.K_s]:
+                esc.setThrottle("neutral")
+  pygame.time.wait(1)
+esc.setThrottle()
+steering.setSteering()
