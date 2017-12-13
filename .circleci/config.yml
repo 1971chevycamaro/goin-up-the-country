@@ -30,12 +30,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            wget abyz.co.uk/rpi/pigpio/pigpio.zip
-            unzip pigpio.zip
-            cd PIGPIO
-            make
-            make install
-          
+            pass
 
       - save_cache:
           paths:
