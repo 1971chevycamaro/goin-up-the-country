@@ -19,7 +19,7 @@ while run:
           esc.setThrottle(esc.getThrottle("base") * 2, "base")
         elif e.key == pygame.K_ESCAPE:
           run = False
-        if e.type == pygame.KEYUP:
+     if e.type == pygame.KEYUP:
             if e.key in [pygame.K_a, pygame.K_d]:
                 steering.setSteering("center")
             if e.key in [pygame.K_w, pygame.K_s]:
