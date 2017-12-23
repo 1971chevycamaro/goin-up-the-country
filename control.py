@@ -3,6 +3,8 @@ from car import steering, esc
 pygame.display.init()
 SCR = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 RUN = True
+esc.set_throttle()
+steering.set_steering()
 while RUN:
     for e in pygame.event.get():
         if e.type == pygame.KEYDOWN:
