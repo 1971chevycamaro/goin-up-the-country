@@ -1,2 +1,3 @@
+#!/bin/bash
 sudo pigpiod
-python ./control.py
+python3 ./control.py
