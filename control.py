@@ -19,9 +19,9 @@ while RUN:
             elif e.key == pygame.K_d:
                 STRG.set_steering(STRG.get_steering()-400)
             elif e.key == pygame.K_w:
-                ESC.set_throttle(ESC.get_throttle()+200)
+                ESC.set_throttle(ESC.get_throttle()+300)
             elif e.key == pygame.K_s:
-                ESC.set_throttle(ESC.get_throttle()-200)
+                ESC.set_throttle(ESC.get_throttle()-300)
             elif e.key == pygame.K_LSHIFT:
                 ESC.set_throttle(some_func(ESC.get_throttle(), 10, 1500))
             elif e.key == pygame.K_ESCAPE:
@@ -31,4 +31,4 @@ while RUN:
                 STRG.set_steering("center")
             elif e.key in [pygame.K_w, pygame.K_s]:
                 ESC.set_throttle("neutral")
-    pygame.time.wait(1)
+pygame.time.wait(1)
