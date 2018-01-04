@@ -1,13 +1,19 @@
-# Project-NY
-mission to New York controlled by a raspberry-pi onboard a hobby-class remote control car.
-## How to set it up to control your own RC car!
-### setting up
-**wiring**
-*note all pins are being reffered to by their Broadcom numbers*
-*note the pins to control the devices can be reassigned in the \__init__.py, esc.py, and steering.py files*
-GPIO18 is is for the ESC by default
-GPIO17 is for the steering servo by default
-GPIO15 is an auxiliary wire designed for use in Castle Creations ESC's when applicable, don't plug anything in there other than that
+# goin-up-the-country
+
+Go anywhere with a raspberry-pi onboard a hobby-class remote control car.
+
+### Set it up for yourself
+---
+#### wiring
+
+note:
+
+- all pins are being reffered to by their Broadcom numbers
+- the pins to control the devices can be reassigned in the \__init__.py, esc.py, and steering.py files
+
+GPIO18 is is for the ESC **by default**
+GPIO17 is for the steering servo **by default**
+GPIO15 is an auxiliary wire designed for use in Castle Creations ESC's when applicable, don't plug anything in there other than that.
 
 Each 5v and GND(Ground/Negative) wire belongs to the corresponding pin on the raspberrypi, see raspberrypi pinout below.
 ![alt text](https://pinout.xyz/resources/raspberry-pi-pinout.png "raspberrypi pinout")
