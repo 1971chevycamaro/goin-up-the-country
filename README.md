@@ -2,7 +2,7 @@
 
 Go anywhere with a raspberry-pi onboard a hobby-class remote control car.
 
-### Set it up for yourself
+### Setup
 ---
 #### wiring
 
@@ -22,6 +22,7 @@ Each 5v and GND(Ground/Negative) wire belongs to the corresponding pin on the ra
 Extract [goin-up-the-country.zip](https://github.com/1971chevycamaro/goin-up-the-country/archive/master.zip) to your Raspbian desktop. To run just go into a terminal - make sure you're in /home/pi by doing `cd ~`, type `sh Desktop/goin*/run.sh` and you can start moving! use the controls to move.
 
 ### controls
+---
 controls are typical to any video game:
 controls are 'w' to move forward, 'a' to turn left, 's' to move backwards, and 'd' to turn right. Press the Escape key to exit the program.
 
