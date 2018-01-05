@@ -3,6 +3,9 @@
 Go anywhere with a raspberry-pi onboard a hobby-class remote control car.
 
 ### Setup
+requirements:
+- raspberrypi with internet connection (raspberrypi zero w used here)
+- VNC viewer
 ---
 #### wiring
 
