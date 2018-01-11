@@ -7,7 +7,7 @@ FORWARD = 1600 if not ESC['FORWARD'] else ESC['FORWARD']
 BACKWARD = 1400 if not ESC['BACKWARD'] else ESC['BACKWARD']
 NEUTRAL = 1500 if not ESC['NEUTRAL'] else ESC['NEUTRAL']
 PI = pigpio.pi()
-def set_throttle(speed="neutral", report_errors=True):
+def set_throttle(speed=NEUTRAL, report_errors=True):
     '''sets ESC to desired throttle'''
     if speed in range(1000, 2001):
         pwm = speed
