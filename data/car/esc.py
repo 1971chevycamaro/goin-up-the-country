@@ -1,16 +1,23 @@
 '''a module designed to control an RC car's speed with PWM signals corresponding to how fast and
 what direction the motor is spinning'''
+import json
+import os
 import pigpio
+SCRIPT_DIR = os.path.dirname(__file__)
+FILE_PATH = os.path.join(SCRIPT_DIR, '../../settings.json')
+with open(FILE_PATH) as f:
+    DATA = json.load(f)
+ESC = DATA['ESC']
+PIN = 18 if not ESC['PIN'] else ESC['PIN']
+FORWARD = 1600 if not ESC['FORWARD'] else ESC['FORWARD']
+BACKWARD = 1400 if not ESC['BACKWARD'] else ESC['BACKWARD']
+NEUTRAL = 1500  if not ESC['NEUTRAL'] else ESC['NEUTRAL']
 PI = pigpio.pi()
-PIN = 18
-PWM_PRESETS = ["forward", 1600, "backward", 1400, "neutral", 1500]
-def set_throttle(speed="neutral", report_errors=True):
+def set_throttle(speed=NEUTRAL, report_errors=True):
     '''sets ESC to desired throttle'''
     if speed in range(1000, 2001):
         pwm = speed
         PI.set_servo_pulsewidth(PIN, pwm)
-    elif speed in PWM_PRESETS:
-        PI.set_servo_pulsewidth(PIN, PWM_PRESETS[PWM_PRESETS.index(speed) + 1])
     #Error Handler
     else:
         if report_errors:
