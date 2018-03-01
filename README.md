@@ -12,7 +12,7 @@ requirements:
 note:
 
 - all pins are being reffered to by their Broadcom numbers
-- the pins to control the devices can be reassigned in the \__init__.py, esc.py, and steering.py files
+- the pins to control the devices can be reassigned in the included settings.json file
 
 GPIO18 is is for the ESC **by default**
 GPIO17 is for the steering servo **by default**
