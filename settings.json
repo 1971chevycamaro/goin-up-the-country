@@ -1,14 +1,14 @@
 {
     "ESC": {
         "PIN": 18,
-        "FORWARD": 1600,
-        "BACKWARD": 1400,
+        "FORWARD": 1650,
+        "BACKWARD": 1350,
         "NEUTRAL": 1500
     },
     "STRG": {
         "PIN": 17,
-        "LEFT": 1800,
-        "RIGHT": 1200,
+        "LEFT": 1850,
+        "RIGHT": 1150,
         "CENTER": 1500
     }
 }

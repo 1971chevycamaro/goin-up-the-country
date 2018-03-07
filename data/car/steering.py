@@ -5,8 +5,7 @@ import os
 import pigpio
 SCRIPT_DIR = os.path.dirname(__file__)
 FILE_PATH = os.path.join(SCRIPT_DIR, '../../settings.json')
-with open(FILE_PATH) as f:
-    DATA = json.load(f)
+DATA = json.load(open(FILE_PATH))
 STRG = DATA['STRG']
 PIN = 17 if not STRG['PIN'] else STRG['PIN']
 LEFT = 1800 if not STRG['LEFT'] else STRG['LEFT']
