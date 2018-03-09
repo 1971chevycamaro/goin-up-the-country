@@ -3,7 +3,8 @@
         "PIN": 18,
         "FORWARD": 1650,
         "BACKWARD": 1350,
-        "NEUTRAL": 1500
+        "NEUTRAL": 1500,
+        "BRAKES": true
     },
     "STRG": {
         "PIN": 17,

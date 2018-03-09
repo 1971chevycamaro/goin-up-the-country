@@ -23,8 +23,8 @@ def auto_stop(hostname):
     while RUN:
         if not os.system('ping -c 1 -w2 ' + hostname
                          + ' > /dev/null 2>&1') == 0:
-            car.set_defaults()
-        sleep(1)
+            ESC.brake(30) 
+        sleep(0.5) # Wait half second before pinging google again.
 
 
 def some_func(num, change=1, threshold=0):
@@ -67,9 +67,9 @@ while RUN:
             # Adjust steering trim.
             
             elif e.key == pygame.K_e:
-                STRG.CENTER -= 20
+                STRG.CENTER -= 15
             elif e.key == pygame.K_q:
-                STRG.CENTER += 20
+                STRG.CENTER += 15
 
             elif e.key == pygame.K_w:
 
