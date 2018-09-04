@@ -3,10 +3,11 @@
 Go anywhere with a raspberry-pi onboard a hobby-class remote control car.
 
 ### Setup
+---
 requirements:
 - raspberrypi with internet connection (raspberrypi zero w used here)
 - VNC viewer
----
+
 #### wiring
 
 note:
@@ -30,6 +31,10 @@ controls are typical to any video game:
 controls are 'w' to move forward, 'a' to turn left, 's' to move backwards, and 'd' to turn right. Press the Escape key to exit the program.
 
 mashing 'shift' will increase throttle, release 'w' to reset to default speed
+
+#### Adjustments
+
+There is a settings.json file which can be used to tune the movement of the car. To fix a car that accelerates to quickly you would reduce the ESC "FORWARD" value preferably in 10 microsecond increments. Values closer to 1500 express lower power output or servo extension.
 
 ## If you want to contribute:
 Go ahead! Although I must say that I'm new to this and I'm trying to learn how to use GitHub, please help me out I can't do this myself, it's taking to long. 
