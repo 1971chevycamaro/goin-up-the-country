@@ -3,6 +3,7 @@
 
 '''controls RC car'''
 
+import atexit
 import os
 import threading
 from time import sleep
@@ -24,7 +25,7 @@ def auto_stop(hostname):
         if not os.system('ping -c 1 -w2 ' + hostname
                          + ' > /dev/null 2>&1') == 0:
             ESC.brake(30) 
-        sleep(0.5) # Wait half second before pinging google again.
+        sleep(0.5) # Wait half second before pinging hostname again.
 
 
 def some_func(num, change=1, threshold=0):
@@ -35,15 +36,12 @@ def some_func(num, change=1, threshold=0):
 
 car.set_defaults()
 
+atexit.register(car.set_defaults)
+
 # Initiate pygame display to capture keyboard inputs
 
 pygame.display.init()
 SCR = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-
-# Turn the display white
-
-SCR.fill([255, 255, 255])
-pygame.display.update()
 
 # Start a thread that checks for replies from googles ip, if none are recieved set the car to defaults.
 
@@ -67,9 +65,9 @@ while RUN:
             # Adjust steering trim.
             
             elif e.key == pygame.K_e:
-                STRG.CENTER -= 15
+                STRG.CENTER -= 20
             elif e.key == pygame.K_q:
-                STRG.CENTER += 15
+                STRG.CENTER += 20
 
             elif e.key == pygame.K_w:
 
