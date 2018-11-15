@@ -10,7 +10,9 @@ def main():
     # Check if git is installed
     try:
         # Pipe output to /dev/null for silence
-        subprocess.Popen("git", stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        null = open("/dev/null", "w")
+        subprocess.Popen("git", stdout=null, stderr=null)
+        null.close()
 
     except OSError:
         print("Error: git is not installed!\nPlease install git for automatic updating to work and then clone this repository.\nThis won't work if you use the downloaded zip file.\nTip: If you don't know how to do any of this, Google is your best friend.")
