@@ -1,5 +1,8 @@
 #!/bin/bash
 sudo pigpiod
-#python3 path_to/control.py
-python3 /home/pi/Desktop/goin*/data/control.py
+echo "updating..."
+cd data/updater
+python2 updater.py
+cd ../../
 echo "loading..."
+python3 data/control.py
